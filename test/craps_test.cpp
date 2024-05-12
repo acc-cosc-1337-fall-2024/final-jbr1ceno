@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include "shooter.h"
 #include "roll.h"
 #include "die.h"
 #include<vector>
@@ -18,7 +19,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	std::vector<bool> dieRollResult{};
 	int falseCount = 0;
 	bool result = true;
-	rollDie.set_seed();
+	srand(time(0));
 
 	for(int i = 0; i < 10; i++)
 	{
@@ -42,18 +43,17 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	}
 	cout<<"False dice num total: "<<falseCount<< " times.\n";
 	REQUIRE(result == true);
-}*/
+}
 
 TEST_CASE("Test for rolling two dice from 2 to 12")
 {
 	Die die1;
 	Die die2;
 	Roll rollTheDice(die1, die2);
-	//int diceRolled;
 	std::vector<bool> diceRollResult{};
 	int falseCount = 0;
 	bool result = true;
-	rollTheDice.set_seed();
+	srand(time(0));
 
 	for(int i = 0; i < 10; i++)
 	{
@@ -77,5 +77,17 @@ TEST_CASE("Test for rolling two dice from 2 to 12")
 	}
 	cout<<"False dice num total: "<<falseCount<< " times.\n";
 	REQUIRE(result == true);
+}*/
+
+TEST_CASE("Verify whatever")
+{
+	Die die1;
+	Die die2;
+	srand(time(0));
+	Shooter rollShooter;
+	rollShooter.throw_dice(die1, die2);
+	rollShooter.throw_dice(die1, die2);
+	rollShooter.throw_dice(die1, die2);
+	rollShooter.display_rolled_values();
 }
 

@@ -8,7 +8,7 @@ class Die
 {
 public:
     int roll(); //return Random in the range of 1 to 6
-    void set_seed(); //to change seed for srand
+    //void set_seed(); //to change seed for srand
 private:
     int sides{6}; //die sides, initialized to 6
 };

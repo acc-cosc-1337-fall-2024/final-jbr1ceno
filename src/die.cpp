@@ -13,7 +13,7 @@ int Die::roll()
     return rollNum;
 }
 
-void Die::set_seed()
+/*void Die::set_seed()
 {
     srand(time(0));
-}
+}*/

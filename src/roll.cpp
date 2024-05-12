@@ -9,11 +9,11 @@
 using std::cout; using std::srand;
 using std::make_unique;
 
-void Roll::set_seed()
+/*void Roll::set_seed()
 {
     die1.set_seed();
     die2.set_seed();
-}
+}*/
 
 void Roll::roll_dice()
 {
